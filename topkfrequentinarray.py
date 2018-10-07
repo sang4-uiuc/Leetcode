@@ -9,17 +9,21 @@
 
 
 import collections
-class Solution:
-    def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
-        
-        output = []
-        c = collections.Counter(nums)
-        res = c.most_common(k)
-        for i in res:
-            output.append(i[0])
-        return output
+
+def topKFrequent(nums, k):
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: List[int]
+    """
+    
+    output = []
+    c = collections.Counter(nums)
+    res = c.most_common(k)
+    print(res)
+    for i in res:
+        output.append(i[0])
+    return output
+arr = [1,1,1,2,2,3]
+k = 2
+print(topKFrequent(arr, k))
