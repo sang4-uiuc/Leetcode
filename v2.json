@@ -1,0 +1,97 @@
+{
+    "parties": [
+        {
+            "id": "302a300506032b6570032100003f7419aa10596855a6cdabdc66cfe7d5a989d9b63b2b34ee1f3595112654cd",
+            "name": "Bank",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b6570032100475d3ac2387e66ab5ea45d1d7cdcf7c4e8f1af86de53fab6a199fd3c73b12e4b",
+            "name": "Tradewind Markets Account Access Wholesaler",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b6570032100db1baddd38f7776773c141f968a1a9d062654651dc086047dab9454603aa903b",
+            "name": "Wholesaler",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b657003210078716077d160e50d71774045810f9edf457a436dc1d05bac572a71f32564a302",
+            "name": "Tradewind Markets Account Access Dealer",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b6570032100135bfdd666de6e043eb1bf511e5ea5556c8008dbf5adeabd3fa4f81956774eec",
+            "name": "Royal Canadian Mint",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b65700321003c6781a1752f987d94ffe26fca51399e1c5a898049b7b51f5686ac3dee980fab",
+            "name": "Tradewind Markets Operations",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b65700321006eab8c52c3815f72a7bf631dac1ec4f40017b84e37450eb2a1fb2a32c575e7ab",
+            "name": "Dealer",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b657003210089e86fddf75dd237683677dc13dabaad8fec774e570a6b2909ebd9cb181c7b55",
+            "name": "Tradewind Markets Validator",
+            "status": "ACTIVE"
+        }
+    ],
+    "custodial_participants": [
+        {
+            "id": "302a300506032b6570032100003f7419aa10596855a6cdabdc66cfe7d5a989d9b63b2b34ee1f3595112654cd",
+            "name": "Bank",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b6570032100db1baddd38f7776773c141f968a1a9d062654651dc086047dab9454603aa903b",
+            "name": "Wholesaler",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "302a300506032b65700321006eab8c52c3815f72a7bf631dac1ec4f40017b84e37450eb2a1fb2a32c575e7ab",
+            "name": "Dealer",
+            "status": "ACTIVE"
+        }
+    ],
+    "products": [
+        {
+            "id": "6ef52ff5-658c-4419-b42c-cf1987b18df8",
+            "display_name": "AUR",
+            "vaulted_at": {
+                "id": "302a300506032b6570032100135bfdd666de6e043eb1bf511e5ea5556c8008dbf5adeabd3fa4f81956774eec",
+                "name": "Royal Canadian Mint",
+                "status": "ACTIVE"
+            }
+        },
+        {
+            "id": "56730aed-504f-4b69-8725-5e1005a4cc75",
+            "display_name": "AGR",
+            "vaulted_at": {
+                "id": "302a300506032b6570032100135bfdd666de6e043eb1bf511e5ea5556c8008dbf5adeabd3fa4f81956774eec",
+                "name": "Royal Canadian Mint",
+                "status": "ACTIVE"
+            }
+        },
+        {
+            "id": "0cd99812-c713-11e8-a8d5-f2801f1b9fd1",
+            "display_name": "AXR",
+            "vaulted_at": {
+                "id": "302a300506032b6570032100135bfdd666de6e043eb1bf511e5ea5556c8008dbf5adeabd3fa4f81956774eec",
+                "name": "Royal Canadian Mint",
+                "status": "ACTIVE"
+            }
+        }
+    ],
+    "permitted_transfer_reasons": [
+        "LENDING TRANSACTION",
+        "OPERATIONAL ERROR",
+        "NO CHANGE IN OWNERSHIP",
+        "OPERATION OF LAW",
+        "OTHER NON-RECURRING"
+    ]
+}
