@@ -21,8 +21,8 @@ def largestSectionalLoad(root):
         if value[0]/value[1] > maxval:
             maxval = value[0]/value[1]
             maxnode = key
-    print(dic)
-    return maxval
+    
+    return maxnode
 
 def findNumberofChild(root, dic):
     if len(root.children) == 0:
