@@ -1,20 +1,29 @@
 class Node:
-    def __init__(self,val=None):
+    def __init__(self,val):
         self.val = val
         self.next = None # the pointer initially points to nothing
     
 class LinkedList:
-    def __init__(self, val=None):
+    def __init__(self):
+        self.head = None
+
+    def __init__(self, val):
         self.head = Node(val)
     
     def insertEnd(self, val):
         n = self.head
+        if n == None:
+            self.head = Node(val)
+            return
         while n.next:
             n = n.next
         n.next = Node(val)
     
     def insertNode(self, node):
         n = self.head
+        if n == None:
+            self.head = node
+            return
         while n.next:
             n = n.next
         n.next = node
@@ -33,6 +42,17 @@ class LinkedList:
             return
         n.next = self.head
         self.head = n
+    
+    def insertLeftNode(self, node):
+        print(node.val)
+        print(self.head.val)
+        if not self.head:
+            print("??")
+            self.head = node
+            return
+        print("wat")
+        node.next = self.head
+        self.head = node
     
     # 2.1
     # Remove doplicates from an unsorted list
@@ -96,7 +116,15 @@ class LinkedList:
                 s.add(n)
                 n = n.next
 
-
+    def reverse(self): 
+        prev = None
+        current = self.head 
+        while(current is not None): 
+            next = current.next
+            current.next = prev 
+            prev = current 
+            current = next
+        self.head = prev 
 
     # 2.5
     # sum lists
@@ -156,12 +184,22 @@ def sumLists(l1, l2):
 # print(t.checkPalindrome())
 
     # test checkCircular
+# t = LinkedList(1)
+# t.insertEnd(2)
+# l = Node(3)
+# t.insertNode(l)
+# t.insertEnd(4)
+# t.insertEnd(5)
+# t.insertEnd(6)
+# t.insertNode(l)
+# print(t.checkCircular())
+
+    # test reverse
 t = LinkedList(1)
 t.insertEnd(2)
-l = Node(3)
-t.insertNode(l)
+t.insertEnd(3)
 t.insertEnd(4)
 t.insertEnd(5)
-t.insertEnd(6)
-t.insertNode(l)
-print(t.checkCircular())
+t.traverse()
+t.reverse()
+t.traverse()
