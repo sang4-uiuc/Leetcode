@@ -142,14 +142,31 @@ def rankCard(hand):
 #     return ranks
 
 
-def getCombinations(arr, n, r):
+def getCombinations(arr, n, r, deck):
     """
     Return all combination of the given cards
-    """"
+    """
     data = [0]*r
     output = []
-    combinationUtil(arr, data, 0,
-                    n - 1, 0, r, output)
+    for i in range(r):
+        combinationUtil(arr, data, 0,
+                    n - 1, 0, r - i, output)
+    
+    for l in output:
+        if len(l) == 4:
+            for i in deck[:1]:
+                l.append(i)
+        elif len(l) == 3:
+            for i in deck[:2]:
+                l.append(i)
+        elif len(l) == 2:
+            for i in deck[:3]:
+                l.append(i)
+        elif len(l) == 1:
+            for i in deck[:4]:
+                l.append(i)
+    output.append(deck)
+    # print(output)
     return output
 
 
@@ -179,7 +196,7 @@ s = ["TH JH QC QD QS QH KH AH 2S 6S",
      "6C 9C 8C 2D 7C 2H TC 4C 9S AH",
      "3D 5S 2H QD TD 6S KH 9H AD QH"]
 
-# This supposedly correct output actually has some errors
+
 # Hand: TH JH QC QD QS Deck: QH KH AH 2S 6S Best hand: straight-flush
 # Hand: 2H 2S 3H 3S 3C Deck: 2D 3D 6C 9C TH Best hand: four-of-a-kind
 # Hand: 2H 2S 3H 3S 3C Deck: 2D 9C 3D 6C TH Best hand: full-house
@@ -190,11 +207,13 @@ s = ["TH JH QC QD QS QH KH AH 2S 6S",
 # Hand: 6C 9C 8C 2D 7C Deck: 2H TC 4C 9S AH Best hand: one-pair
 # Hand: 3D 5S 2H QD TD Deck: 6S KH 9H AD QH Best hand: highest-card
 
-
+z = ["TH JH QC QD QS QH KH AH 2S 6S"]
 def evalDeck(total):
-    r = 5
-    n = len(total)
-    hands = getCombinations(total, n, r)
+    orig = total[:5]
+    deck = total[5:]
+    r = 1
+    n = len(orig)
+    hands = getCombinations(orig, n, 5, deck)
     return getBestHand(hands)
 
 
