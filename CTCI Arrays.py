@@ -55,45 +55,13 @@ def palindromePermutation(s):
     if count > 1:
         return False
     return True
-def isPalindrome(s):
-    # while l < h:
-    #     if s[l] != s[h]:
-    #         return False
-    #     l +=1
-    #     h -=1
-    # return True
-    if list(s) == list(s)[::-1]:
-        return True
-    else:
-        return False
-
-print(isPalindrome("aba"))
-print(isPalindrome("abfa"))
-print(isPalindrome("abba"))
-def removeOnePalindrome(s):
-    l = 0
-    h = len(s) - 1
-    while l < h:
-        # print(l, h)
-        if s[l] == s[h]:
-            l += 1
-            h -= 1
-        else:
-            if isPalindrome(s):
-                return l
-            if isPalindrome(s):
-                return h
-            return False
-
-    return True
-print(removeOnePalindrome("abcba"))
-print(removeOnePalindrome("abcbea"))
-print(removeOnePalindrome("abecbea"))
 
 
 # 1.5
 def oneAway(s1, s2):
-    pass
+    if abs(len(s1) - len(s2)) > 1:
+        return False
+    
 
 # 1.6
 # linear time looping through the string, and constant space

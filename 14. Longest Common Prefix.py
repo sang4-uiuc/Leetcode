@@ -9,6 +9,7 @@ def longestCommonPrefix(strs):
         for i, ch in enumerate(shortest):
             for other in strs:
                 if other[i] != ch:
+                    
                     return shortest[:i]
         return shortest 
 

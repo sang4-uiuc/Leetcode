@@ -93,7 +93,9 @@ def rightView(root):
     print(res)
     return res.pop()
   
-  
+
+# 4.2
+
 # Driver program to test above function 
 root = Node(1) 
 root.left = Node(2) 
