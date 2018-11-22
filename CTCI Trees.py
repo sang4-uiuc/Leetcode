@@ -95,15 +95,31 @@ def rightView(root):
   
 
 # 4.2
+# time complexity is linear
+def createMinimalBST(l):
+	return createMinimalBSTHelper(l, 0, len(l) -1)
+
+def createMinimalBSTHelper(l, start, end):
+	if end < start:
+		return None
+	mid = (start + end) // 2
+	n = Node(l[mid])
+	n.left = createMinimalBSTHelper(l, start, mid - 1)
+	n.right = createMinimalBSTHelper(l, mid + 1, end)
+	return n
 
 # Driver program to test above function 
-root = Node(1) 
-root.left = Node(2) 
-root.right = Node(3) 
-root.left.left = Node(4) 
-root.left.right = Node(5) 
-root.right.left = Node(6) 
-root.right.right = Node(7) 
-root.right.left.right = Node(8) 
+# root = Node(1) 
+# root.left = Node(2) 
+# root.right = Node(3) 
+# root.left.left = Node(4) 
+# root.left.right = Node(5) 
+# root.right.left = Node(6) 
+# root.right.right = Node(7) 
+# root.right.left.right = Node(8) 
   
-print(rightView(root))
+# print(rightView(root))
+
+arr = [1, 2, 3, 4, 5, 6, 7] 
+root = createMinimalBST(arr)
+printPreorder(root)
