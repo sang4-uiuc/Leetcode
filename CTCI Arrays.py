@@ -59,9 +59,39 @@ def palindromePermutation(s):
 
 # 1.5
 def oneAway(s1, s2):
-    if abs(len(s1) - len(s2)) > 1:
+    if len(s1) == len(s2):
+        return oneEdit(s1, s2)
+    elif len(s1) + 1 == len(s2):
+        return oneInsert(s1, s2)
+    elif len(s2) + 1 == len(s1):
+        return oneInsert(s2, s1)
+    else:
         return False
-    
+
+def oneEdit(s1, s2):
+    count = 0
+    for i in range(len(s1)):
+        if s1[i] != s2[i]:
+            count += 1
+    if count > 1:
+        return False
+    else:
+        return True
+
+def oneInsert(s1, s2):
+    i = 0
+    j = 0
+
+    while i < len(s1) and i < len(s2):
+        if s1[i] != s2[j]:
+            if i != j:
+                return False
+            j += 1
+        else:
+            i += 1
+            j += 1
+    return True
+
 
 # 1.6
 # linear time looping through the string, and constant space
@@ -114,6 +144,15 @@ class ArraysTest(unittest.TestCase):
         self.assertFalse(palindromePermutation("lkasdjlfkasj"))
         self.assertFalse(palindromePermutation("racecarr"))
     
+    def test_oneAway(self):
+        self.assertEqual(oneAway("bale", "pale"), True)
+        self.assertEqual(oneAway("bale", "ble"), True)
+        self.assertEqual(oneAway("ba", "pa"), True)
+        self.assertEqual(oneAway("balettt", "pale"), False)
+        self.assertEqual(oneAway("bale", "bdme"), False)
+        self.assertEqual(oneAway("bale", "pal"), False)
+        self.assertEqual(oneAway("bal", "bale"), True)
+
     def test_stringCompression(self):
         self.assertEqual(stringCompression("aabcccccaaa"), "a2b1c5a3")
         self.assertEqual(stringCompression("nnnmmmlll"), "n3m3l3")
@@ -125,6 +164,7 @@ def suite():
     test_suite.addTest(unittest.makeSuite(ArraysTest))
     return test_suite
 
-# suite = suite()
-# unittest.TextTestRunner().run(suite)
+suite = suite()
+unittest.TextTestRunner().run(suite)
+
             
