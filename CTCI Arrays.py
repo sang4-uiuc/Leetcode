@@ -159,6 +159,7 @@ class ArraysTest(unittest.TestCase):
         self.assertEqual(stringCompression("bbttbbbbyyt"), "b2t2b4y2t1")
         self.assertEqual(stringCompression("aabbccdd"), "aabbccdd")
         self.assertEqual(stringCompression("ab"), "ab")
+        
 def suite():
     test_suite = unittest.TestSuite()
     test_suite.addTest(unittest.makeSuite(ArraysTest))
